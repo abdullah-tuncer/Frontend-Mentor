@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+<main>
+    <div id="sign-up-container" class="card">
+        <section>
+            <h1>Stay updated!</h1>
+            <p>Join 60,000+ product managers receiving monthly updates on:</p>
+            <ul>
+                <li>
+                    <img src="assets/images/icon-list.svg" alt="">
+                    Product discovery and building what matters
+                </li>
+                <li>
+                    <img src="assets/images/icon-list.svg" alt="">
+                    Measuring to ensure updates are a success
+                </li>
+                <li>
+                    <img src="assets/images/icon-list.svg" alt="">
+                    And much more!
+                </li>
+            </ul>
+            <div class="email-input">
+                <div class="email-input-header">
+                    <label for="email">Email address</label>
+                    <span id="email-error" class="error-message hidden">Valid email required</span>
+                </div>
+                <input id="email" type="text" placeholder="email@company.com" required>
+            </div>
+            <button id="submit-btn" type="submit">Subscribe to monthly newsletter</button>
+        </section>
+        <div class="image-container">
+            <picture>
+                <source media="(max-width: 425px)" srcset="assets/images/illustration-sign-up-mobile.svg">
+                <source media="(max-width: 768px)" srcset="assets/images/illustration-sign-up-tablet.svg">
+                <img src="assets/images/illustration-sign-up-desktop.svg" alt="">
+            </picture>
+        </div>
+    </div>
+    <div id="success-container" class="card hidden">
+        <img src="assets/images/icon-success.svg" alt="">
+        <h1>Thanks for subscribing!</h1>
+        <p>
+            A confirmation email has been sent to <b>ash@loremcompany.com</b>.
+            Please open it and click the button inside to confirm your subscription.
+        </p>
+        <button id="dismiss-btn" type="button">Dismiss message</button>
+    </div>
+</main>
+</body>
+</html>

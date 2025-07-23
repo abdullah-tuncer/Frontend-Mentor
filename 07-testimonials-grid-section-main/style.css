@@ -1,0 +1,177 @@
+:root {
+    font-size: 13px;
+    font-weight: 500;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    --primary-purple-50: hsl(260, 100%, 95%);
+    --primary-purple-300: hsl(264, 82%, 80%);
+    --primary-purple-500: hsl(263, 55%, 52%);
+    --white: hsl(0, 0%, 100%);
+    --grey-100: hsl(214, 17%, 92%);
+    --grey-200: hsl(0, 0%, 81%);
+    --grey-400: hsl(224, 10%, 45%);
+    --grey-500: hsl(217, 19%, 35%);
+    --dark-blue: hsl(219, 29%, 14%);
+    --black: hsl(0, 0%, 7%);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--grey-100);
+    margin: 0;
+}
+
+main {
+    width: 1050px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+            "card1  card1   card2   card5"
+            "card3  card4   card4   card5";
+    gap: 2rem;
+}
+
+.card {
+    border-radius: 0.6rem;
+    box-shadow: 3rem 3rem 2rem rgba(0, 0, 0, 0.12);
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.card h2 {
+    font-weight: 600;
+}
+
+.card p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+
+.author {
+    display: flex;
+}
+
+.author img {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+}
+
+.author div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    line-height: 1.4;
+}
+
+.author div span:last-child {
+    font-size: 0.8rem;
+}
+
+.card1 {
+    grid-area: card1;
+    background: var(--primary-purple-500);
+    color: var(--white);
+    position: relative;
+    z-index: 1;
+}
+
+.card1 .author img {
+    border: solid 2px var(--primary-purple-300);
+}
+
+.card1::before {
+    content: "";
+    background: url("images/bg-pattern-quotation.svg") no-repeat center/contain;
+    position: absolute;
+    width: 104px;
+    height: 102px;
+    right: 4rem;
+    top: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.card2 {
+    grid-area: card2;
+    background: var(--grey-500);
+    color: var(--white);
+}
+
+.card3 {
+    grid-area: card3;
+    color: var(--grey-400);
+    background: var(--white);
+}
+
+.card4 {
+    grid-area: card4;
+    background: var(--dark-blue);
+    color: var(--grey-200);
+}
+
+.card4 .author img {
+    border: solid 2px var(--primary-purple-500);
+}
+
+.card5 {
+    grid-area: card5;
+    color: var(--grey-400);
+    background: var(--white);
+}
+
+
+@media screen and (max-width: 1024px) {
+    body {
+        height: unset;
+        margin: 1rem;
+    }
+
+    main {
+        width: 768px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas:
+            "card1  card1   card2"
+            "card3  card4   card4"
+            "card5  card5   card5";
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        height: unset;
+        margin: 2rem;
+    }
+
+    main {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: unset;
+        grid-template-areas:
+            "card1  card1"
+            "card2  card3"
+            "card4  card4"
+            "card5  card5";
+    }
+}
+
+@media screen and (max-width: 425px) {
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: none; /* isteğe bağlı, alan ataması kalkar */
+    }
+
+    .card {
+        grid-column: auto;
+        grid-row: auto;
+        box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
+
+    }
+}

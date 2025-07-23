@@ -1,0 +1,182 @@
+$mobileSize: 425px;
+$tabletSize: 768px;
+$primaryRed: hsl(4, 100%, 67%);
+$blue800: hsl(234, 29%, 20%);
+$blue700: hsl(235, 18%, 26%);
+$grey: hsl(0, 0%, 58%);
+$white: hsl(0, 0%, 100%);
+$normalWeight: 400;
+$boldWeight: 700;
+
+:root {
+  font-size: 16px;
+  color: $blue700;
+}
+
+body {
+  font-size: 16px;
+  background: $blue700;
+  font-family: "Roboto", sans-serif;
+  font-weight: $normalWeight;
+  margin: 0;
+
+  main {
+    display: flex;
+    min-height: 100vh;
+    min-width: 100vw;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 2rem;
+  }
+}
+
+.card {
+  display: flex;
+  margin: auto;
+  border-radius: 2rem;
+  background: $white;
+  padding: 1.5rem;
+  gap: 2rem;
+}
+
+#sign-up-container {
+  max-width: 800px;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+
+    & > * {
+      margin: 0;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: flex;
+      align-items: center; /* Dikeyde ortalama */
+      gap: 8px;
+      margin-bottom: .7rem;
+    }
+  }
+
+  .email-input {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+    .email-input-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: .7rem;
+      font-weight: $boldWeight;
+
+      .error-message {
+        color: $primaryRed;
+      }
+    }
+
+    input {
+      border: 1.5px solid $grey;
+      border-radius: .5rem;
+      padding: 1rem;
+      font-size: 1rem;
+
+      &.error {
+        border-color: $primaryRed;
+        color: $primaryRed;
+        background: rgba(255, 98, 87, 0.1);
+      }
+    }
+  }
+
+  div picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 1rem 0;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  background: $blue800;
+  color: $white;
+  border-radius: .5rem;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 0;
+  cursor: pointer;
+}
+
+button:hover {
+  background: linear-gradient(to right, #ff5379, #ff693c);
+  box-shadow: 0 .7rem 1.4rem rgba(255, 105, 60, 0.50);
+}
+
+button:active {
+  transform: scale(.95);
+}
+
+#success-container {
+  max-width: 375px;
+  flex-direction: column;
+  padding: 3rem;
+  gap: 1.5rem;
+
+  & > * {
+    margin: 0;
+  }
+
+  img {
+    width: 64px;
+  }
+}
+
+@media screen and (max-width: $mobileSize) {
+
+  body main {
+    padding: 0;
+  }
+
+  .card {
+    border-radius: 0;
+    padding: 0;
+  }
+
+  #sign-up-container {
+    flex-direction: column;
+    width: 100%;
+
+    .image-container {
+      order: 1;
+    }
+
+    section {
+      order: 2;
+    }
+  }
+
+  #success-container {
+    max-width: unset;
+    height: 100vh;
+    box-sizing: border-box;
+
+    button {
+      margin-top: auto;
+    }
+  }
+}
+

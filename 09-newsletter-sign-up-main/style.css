@@ -1,0 +1,153 @@
+:root {
+  font-size: 16px;
+  color: hsl(235, 18%, 26%);
+}
+
+body {
+  font-size: 16px;
+  background: hsl(235, 18%, 26%);
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  margin: 0;
+}
+body main {
+  display: flex;
+  min-height: 100vh;
+  min-width: 100vw;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 2rem;
+}
+
+.card {
+  display: flex;
+  margin: auto;
+  border-radius: 2rem;
+  background: hsl(0, 0%, 100%);
+  padding: 1.5rem;
+  gap: 2rem;
+}
+
+#sign-up-container {
+  max-width: 800px;
+}
+#sign-up-container section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+}
+#sign-up-container section > * {
+  margin: 0;
+}
+#sign-up-container ul {
+  list-style: none;
+  padding: 0;
+}
+#sign-up-container ul li {
+  display: flex;
+  align-items: center; /* Dikeyde ortalama */
+  gap: 8px;
+  margin-bottom: 0.7rem;
+}
+#sign-up-container .email-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+#sign-up-container .email-input .email-input-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+#sign-up-container .email-input .email-input-header .error-message {
+  color: hsl(4, 100%, 67%);
+}
+#sign-up-container .email-input input {
+  border: 1.5px solid hsl(0, 0%, 58%);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 1rem;
+}
+#sign-up-container .email-input input.error {
+  border-color: hsl(4, 100%, 67%);
+  color: hsl(4, 100%, 67%);
+  background: rgba(255, 98, 87, 0.1);
+}
+#sign-up-container div picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 1rem 0;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  background: hsl(234, 29%, 20%);
+  color: hsl(0, 0%, 100%);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 0;
+  cursor: pointer;
+}
+
+button:hover {
+  background: linear-gradient(to right, #ff5379, #ff693c);
+  box-shadow: 0 0.7rem 1.4rem rgba(255, 105, 60, 0.5);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+#success-container {
+  max-width: 375px;
+  flex-direction: column;
+  padding: 3rem;
+  gap: 1.5rem;
+}
+#success-container > * {
+  margin: 0;
+}
+#success-container img {
+  width: 64px;
+}
+
+@media screen and (max-width: 425px) {
+  body main {
+    padding: 0;
+  }
+  .card {
+    border-radius: 0;
+    padding: 0;
+  }
+  #sign-up-container {
+    flex-direction: column;
+    width: 100%;
+  }
+  #sign-up-container .image-container {
+    order: 1;
+  }
+  #sign-up-container section {
+    order: 2;
+  }
+  #success-container {
+    max-width: unset;
+    height: 100vh;
+    box-sizing: border-box;
+  }
+  #success-container button {
+    margin-top: auto;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

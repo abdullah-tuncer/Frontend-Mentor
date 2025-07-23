@@ -1,0 +1,91 @@
+:root {
+    font-size: 14px;
+    --green: hsl(75, 94%, 57%);
+    --white: hsl(0, 0%, 100%);
+    --grey-700: hsl(0, 0%, 20%);
+    --grey-800: hsl(0, 0%, 12%);
+    --grey-900: hsl(0, 0%, 8%);
+}
+
+body {
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: var(--grey-900);
+    color: var(--white);
+    font-family: "Inter", sans-serif;
+}
+
+.card {
+    min-width: 300px;
+    background: var(--grey-800);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    border-radius: 1rem;
+}
+
+.card img {
+    border-radius: 50%;
+    height: 6.5rem;
+    width: 6.5rem;
+}
+
+h1 {
+    font-weight: 400;
+    margin-bottom: 0px;
+    font-size: 1.9rem;
+}
+
+.location {
+    color: var(--green);
+    font-weight: 700;
+    margin-top: 0.3rem;
+}
+
+.description {
+    font-weight: 400;
+    margin-bottom: 1.6rem;
+}
+
+.list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+
+}
+
+.list-item {
+    border-radius: 0.5rem;
+    height: 3.1rem;
+    width: 100%;
+    font-weight: 600;
+    background: var(--grey-700);
+    color: var(--white);
+    text-align: center;
+    align-content: center;
+    cursor: pointer;
+}
+
+.list-item:hover {
+    color: var(--grey-900);
+    background: var(--green);
+}
+
+
+@media screen and (max-width: 375px) {
+    :root {
+        font-size: 10px;
+    }
+
+    .card {
+        padding: 1rem;
+        min-width: auto;
+        width: 90vw;
+        box-sizing: border-box;
+    }
+}
