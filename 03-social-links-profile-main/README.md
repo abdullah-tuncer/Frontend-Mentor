@@ -11,7 +11,8 @@ This is a solution to the [Social links profile challenge on Frontend Mentor](ht
 
 ### Links
 
-- Live Site URL: [Click Me!](https://abdullah-tuncer.github.io/fm-social-links-profile/)
+- Live Site URL: [Click Me!](https://abdullah-tuncer.github.io/Frontend-Mentor/03-social-links-profile-main/)
+- Other Solutions: [Click Me!](https://abdullah-tuncer.github.io/Frontend-Mentor/)
 
 ## My process
 

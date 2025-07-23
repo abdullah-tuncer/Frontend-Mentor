@@ -11,7 +11,8 @@ This is a solution to the [Four card feature section challenge on Frontend Mento
 
 ### Links
 
-- Live Site URL: [Click Me!](https://abdullah-tuncer.github.io/fm-four-card-feature-section/)
+- Live Site URL: [Click Me!](https://abdullah-tuncer.github.io/Frontend-Mentor/06-four-card-feature-section-main/)
+- Other Solutions: [Click Me!](https://abdullah-tuncer.github.io/Frontend-Mentor/)
 
 ## My process
 

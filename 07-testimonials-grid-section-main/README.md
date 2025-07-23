@@ -13,7 +13,8 @@ This is a solution to the [Testimonials grid section challenge on Frontend Mento
 
 ### Links
 
-- Live Site URL: [Click Me!](https://abdullah-tuncer.github.io/fm-testimonials-grid-section/)
+- Live Site URL: [Click Me!](https://abdullah-tuncer.github.io/Frontend-Mentor/07-testimonials-grid-section-main/)
+- Other Solutions: [Click Me!](https://abdullah-tuncer.github.io/Frontend-Mentor/)
 
 ## My process
 

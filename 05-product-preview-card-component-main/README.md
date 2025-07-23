@@ -10,7 +10,8 @@ This is a solution to the [Product preview card component challenge on Frontend 
 
 ### Links
 
-- Live Site URL: [Click Me!](https://abdullah-tuncer.github.io/fm-product-preview-card-component/)
+- Live Site URL: [Click Me!](https://abdullah-tuncer.github.io/Frontend-Mentor/05-product-preview-card-component-main/)
+- Other Solutions: [Click Me!](https://abdullah-tuncer.github.io/Frontend-Mentor/)
 
 ## My process
 

@@ -10,7 +10,8 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ### Links
 
-- Live Site URL: [Click Me!](https://abdullah-tuncer.github.io/fm-qr-code/)
+- Live Site URL: [Click Me!](https://abdullah-tuncer.github.io/Frontend-Mentor/01-qr-code-main/)
+- Other Solutions: [Click Me!](https://abdullah-tuncer.github.io/Frontend-Mentor/)
 
 ## My process
 
