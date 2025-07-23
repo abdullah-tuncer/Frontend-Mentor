@@ -11,8 +11,6 @@ function isValidEmail(email) {
 
 submitBtn.addEventListener("click", (evt) => {
     evt.preventDefault();
-    console.log(emailInput.value);
-    console.log(!isValidEmail(emailInput.value));
     if (isValidEmail(emailInput.value)) {
         emailInput.value = "";
         document.getElementById("success-container").classList.remove("hidden");
