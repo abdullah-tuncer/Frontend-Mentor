@@ -1,0 +1,257 @@
+:root {
+  font-size: 18px;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+}
+
+body {
+  background: hsl(226, 43%, 10%);
+  margin: 0;
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+.container {
+  margin: auto;
+  width: 900px;
+  height: 400px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+}
+.container .card {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.container .card .head {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: end;
+  margin-bottom: -1rem;
+  height: 3rem;
+  min-height: 3rem;
+}
+.container .card .head img {
+  width: 3rem;
+  position: relative;
+  top: -0.4rem;
+  left: -0.5rem;
+  z-index: -1;
+}
+.container .card[data-period=daily] .time-container[data-type=daily], .container .card[data-period=weekly] .time-container[data-type=weekly], .container .card[data-period=monthly] .time-container[data-type=monthly] {
+  display: block;
+}
+.container .card .card-content {
+  position: relative;
+  z-index: 2;
+  background: hsl(235, 46%, 20%);
+  color: white;
+  height: 100%;
+  border-radius: inherit;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container .card .card-content > *, .container .card .card-content > * > * {
+  margin: 0;
+}
+.container .card .card-content:hover {
+  background: #34397b;
+  cursor: pointer;
+}
+.container .card .card-content .title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .card .card-content .title-container div {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.container .card .card-content .time-container {
+  display: none;
+}
+.container .card .card-content .time-container > * {
+  margin: 0.2rem 0;
+}
+.container .card .card-content .time-container .time {
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+.container .card .card-content .time-container .update-time {
+  font-size: 0.8rem;
+  color: hsl(236, 100%, 87%);
+}
+.container .profile-card {
+  grid-area: 1/1/3/2;
+  background: hsl(235, 46%, 20%);
+  color: white;
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+}
+.container .profile-card .user-container {
+  border-radius: inherit;
+  background: hsl(246, 80%, 60%);
+  padding: 1.5rem;
+  flex: 1;
+}
+.container .profile-card .user-container .user {
+  margin-top: 2rem;
+  font-weight: 300;
+}
+.container .profile-card .user-container .user > * {
+  margin: 0;
+}
+.container .profile-card .user-container .user .title {
+  font-size: 0.6rem;
+}
+.container .profile-card .user-container .user .name {
+  font-size: 1.8rem;
+}
+.container .profile-card .user-container .img-wrapper {
+  width: 3.1rem;
+  height: 3.1rem;
+  border: 3px solid white;
+  border-radius: 50%;
+}
+.container .profile-card .user-container .img-wrapper img {
+  width: 100%;
+  height: 100%;
+}
+.container .profile-card .button-list-container {
+  padding: 1rem 1.5rem;
+  flex-shrink: 1;
+}
+.container .profile-card .button-list-container ul {
+  padding-left: 0;
+  margin: 0;
+}
+.container .profile-card .button-list-container ul[data-active=daily] li[data-type=daily], .container .profile-card .button-list-container ul[data-active=weekly] li[data-type=weekly], .container .profile-card .button-list-container ul[data-active=monthly] li[data-type=monthly] {
+  color: white;
+  font-weight: 400;
+}
+.container .profile-card .button-list-container ul li {
+  list-style: none inside;
+  padding-bottom: 0.9rem;
+  color: hsl(236, 100%, 87%);
+  cursor: pointer;
+  font-weight: 300;
+  font-size: 0.8rem;
+}
+.container .profile-card .button-list-container ul li:last-child {
+  padding-bottom: 0;
+}
+.container .profile-card .button-list-container ul li:hover {
+  color: white;
+  font-weight: 400;
+}
+
+.reset-top img {
+  top: 0 !important;
+}
+
+.bg-orange {
+  background: hsl(15, 100%, 70%);
+}
+
+.bg-blue {
+  background: hsl(195, 74%, 62%);
+}
+
+.bg-pink {
+  background: hsl(348, 100%, 68%);
+}
+
+.bg-green {
+  background: hsl(145, 58%, 55%);
+}
+
+.bg-purple {
+  background: hsl(264, 64%, 52%);
+}
+
+.bg-yellow {
+  background: hsl(43, 84%, 65%);
+}
+
+@media screen and (max-width: 920px) {
+  .container {
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    box-sizing: border-box;
+    padding: 1.5rem;
+    height: auto;
+  }
+  .container .profile-card {
+    grid-area: 1/1/4/2;
+  }
+}
+@media screen and (max-width: 645px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .container .profile-card {
+    grid-area: 1/1/3/2;
+  }
+}
+@media screen and (max-width: 425px) {
+  .container {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .container .profile-card {
+    grid-area: unset;
+  }
+  .container .profile-card .user-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .container .profile-card .user-container .user {
+    margin-top: unset;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .container .profile-card .user-container .user .title {
+    font-size: 0.8rem;
+  }
+  .container .profile-card .user-container .user .name {
+    font-size: 1.4rem;
+  }
+  .container .profile-card .button-list-container ul {
+    display: flex;
+    justify-content: space-between;
+  }
+  .container .profile-card .button-list-container ul li {
+    font-size: 1rem;
+    padding-bottom: 0;
+  }
+  .container .card[data-period=daily] .time-container[data-type=daily], .container .card[data-period=weekly] .time-container[data-type=weekly], .container .card[data-period=monthly] .time-container[data-type=monthly] {
+    display: flex;
+  }
+  .container .card .card-content .time-container {
+    justify-content: space-between;
+    align-items: center;
+  }
+  .container .card .card-content .time-container .time {
+    font-size: 1.8rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

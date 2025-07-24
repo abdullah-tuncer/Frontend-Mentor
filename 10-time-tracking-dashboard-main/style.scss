@@ -1,0 +1,325 @@
+$purple-600: hsl(246, 80%, 60%);
+$orange-300: hsl(15, 100%, 70%);
+$blue-300: hsl(195, 74%, 62%);
+$pink-400: hsl(348, 100%, 68%);
+$green-400: hsl(145, 58%, 55%);
+$purple-700: hsl(264, 64%, 52%);
+$yellow-300: hsl(43, 84%, 65%);
+$navy-950: hsl(226, 43%, 10%);
+$navy-900: hsl(235, 46%, 20%);
+$purple-500: hsl(235, 45%, 61%);
+$navy-200: hsl(236, 100%, 87%);
+$font-weight-thin: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 500;
+
+:root {
+  font-size: 18px;
+  font-family: "Rubik", sans-serif;
+  font-weight: $font-weight-regular;
+}
+
+body {
+  background: $navy-950;
+  margin: 0;
+
+  main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+  }
+}
+
+.container {
+  margin: auto;
+  width: 900px;
+  height: 400px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+
+  .card {
+    width: 100%;
+    height: 100%;
+    border-radius: .8rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    .head {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: end;
+      margin-bottom: -1rem;
+      height: 3rem;
+      min-height: 3rem;
+
+      img {
+        width: 3rem;
+        position: relative;
+        top: -.4rem;
+        left: -.5rem;
+        z-index: -1;
+      }
+    }
+
+    &[data-period="daily"] .time-container[data-type="daily"],
+    &[data-period="weekly"] .time-container[data-type="weekly"],
+    &[data-period="monthly"] .time-container[data-type="monthly"] {
+      display: block;
+    }
+
+    .card-content {
+      position: relative;
+      z-index: 2;
+      background: $navy-900;
+      color: white;
+      height: 100%;
+      border-radius: inherit;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      & > *, & > * > * {
+        margin: 0;
+      }
+
+      &:hover {
+        background: #34397b;
+        cursor: pointer;
+      }
+
+      .title-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        div {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+        }
+      }
+
+      .time-container {
+        display: none;
+
+        & > * {
+          margin: 0.2rem 0;
+        }
+
+        .time {
+          font-size: 2.5rem;
+          font-weight: $font-weight-thin;
+        }
+
+        .update-time {
+          font-size: .8rem;
+          color: $navy-200;
+        }
+      }
+    }
+  }
+
+  .profile-card {
+    grid-area: 1/1/3/2;
+    background: $navy-900;
+    color: white;
+    border-radius: .8rem;
+    display: flex;
+    flex-direction: column;
+
+    .user-container {
+      border-radius: inherit;
+      background: $purple-600;
+      padding: 1.5rem;
+      flex: 1;
+
+      .user {
+        margin-top: 2rem;
+        font-weight: $font-weight-thin;
+
+        & > * {
+          margin: 0;
+        }
+
+        .title {
+          font-size: .6rem;
+        }
+
+        .name {
+          font-size: 1.8rem;
+        }
+      }
+
+      .img-wrapper {
+        width: 3.1rem;
+        height: 3.1rem;
+        border: 3px solid white;
+        border-radius: 50%;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .button-list-container {
+      padding: 1rem 1.5rem;
+      flex-shrink: 1;
+
+      ul {
+        padding-left: 0;
+        margin: 0;
+
+        &[data-active="daily"] li[data-type="daily"],
+        &[data-active="weekly"] li[data-type="weekly"],
+        &[data-active="monthly"] li[data-type="monthly"] {
+          color: white;
+          font-weight: $font-weight-regular;
+        }
+
+        li {
+          list-style: none inside;
+          padding-bottom: .9rem;
+          color: $navy-200;
+          cursor: pointer;
+          font-weight: $font-weight-thin;
+          font-size: .8rem;
+
+          &:last-child {
+            padding-bottom: 0;
+          }
+
+          &:hover {
+            color: white;
+            font-weight: $font-weight-regular;
+          }
+        }
+      }
+    }
+  }
+}
+
+.reset-top img {
+  top: 0 !important;
+}
+
+.bg-orange {
+  background: $orange-300;
+}
+
+.bg-blue {
+  background: $blue-300;
+}
+
+.bg-pink {
+  background: $pink-400;
+}
+
+.bg-green {
+  background: $green-400;
+}
+
+.bg-purple {
+  background: $purple-700;
+}
+
+.bg-yellow {
+  background: $yellow-300;
+}
+
+@media screen and (max-width: 920px) {
+  .container {
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    box-sizing: border-box;
+    padding: 1.5rem;
+    height: auto;
+
+    .profile-card {
+      grid-area: 1/1/4/2;
+    }
+  }
+
+}
+
+@media screen and (max-width: 645px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+
+    .profile-card {
+      grid-area: 1/1/3/2;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .container {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+
+    .profile-card {
+      grid-area: unset;
+
+      .user-container {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+
+        .user {
+          margin-top: unset;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+
+          .title {
+            font-size: .8rem;
+          }
+
+          .name {
+            font-size: 1.4rem;
+          }
+        }
+      }
+
+      .button-list-container {
+        ul {
+          display: flex;
+          justify-content: space-between;
+
+          li {
+            font-size: 1rem;
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+
+    .card {
+      &[data-period="daily"] .time-container[data-type="daily"],
+      &[data-period="weekly"] .time-container[data-type="weekly"],
+      &[data-period="monthly"] .time-container[data-type="monthly"] {
+        display: flex;
+      }
+
+      .card-content .time-container {
+        justify-content: space-between;
+        align-items: center;
+
+        .time {
+          font-size: 1.8rem;
+
+        }
+
+      }
+    }
+  }
+}
