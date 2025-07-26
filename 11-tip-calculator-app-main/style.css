@@ -166,9 +166,10 @@ button:active {
     transform: scale(.95);
 }
 
-.active {
+.reset-button {
     color: var(--green-900);
     background: var(--primary-green-400);
+    margin-top: auto;
 }
 
 .main-card .screen {
