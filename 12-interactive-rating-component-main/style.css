@@ -1,0 +1,138 @@
+:root {
+    font-size: 15px;
+    font-family: "Overpass", sans-serif;
+    --orange-500: hsl(25, 97%, 53%);
+    --white: hsl(0, 0%, 100%);
+    --grey-500: hsl(217, 12%, 63%);
+    --grey-900: hsl(213, 19%, 18%);
+    --grey-950: hsl(216, 12%, 8%);
+}
+
+body {
+    margin: 0;
+    background: var(--grey-950);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+}
+
+section.card {
+    margin: auto;
+    max-width: 340px;
+    background: radial-gradient(
+            circle at top,
+            hsl(213, 19%, 18%),
+            hsl(213, 19%, 11%)
+    );
+    border-radius: 2rem;
+    padding: 2rem;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.img-wrapper {
+    background: var(--grey-900);
+    border-radius: 50%;
+    height: 3.1rem;
+    width: 3.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin: 0 0 0.8rem 0;
+}
+
+p {
+    margin: 0;
+    color: var(--grey-500);
+    line-height: 1.5;
+}
+
+.rate-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rate-buttons > button {
+    border-radius: 50%;
+    background: var(--grey-900);
+    height: 3.4rem;
+    width: 3.4rem;
+    border: 2px solid transparent;
+    color: var(--grey-500);
+    font-size: 1rem;
+    font-family: "Overpass", sans-serif;
+    cursor: pointer;
+}
+
+.rate-buttons[data-active="1"] button[data-rate="1"],
+.rate-buttons[data-active="2"] button[data-rate="2"],
+.rate-buttons[data-active="3"] button[data-rate="3"],
+.rate-buttons[data-active="4"] button[data-rate="4"],
+.rate-buttons[data-active="5"] button[data-rate="5"] {
+    background: var(--orange-500);
+    color: var(--grey-950);
+}
+
+.submit-button {
+    border-radius: 1.7rem;
+    background: var(--orange-500);
+    border: 2px solid transparent;
+    color: var(--grey-950);
+    font-size: 1rem;
+    padding: .7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "Overpass", sans-serif;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--white);
+    color: var(--grey-950);
+}
+
+button:active {
+    transform: scale(.95);
+}
+
+.thank-you-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.7rem;
+}
+
+.thank-you-container .img-container {
+    height: 6rem;
+}
+
+.thank-you-container .img-container img {
+    height: 100%;
+}
+
+.chip {
+    color: var(--orange-500);
+    background: var(--grey-900);
+    padding: .3rem 1rem;
+    border-radius: 2rem;
+}
+
+.hidden {
+    display: none;
+}
