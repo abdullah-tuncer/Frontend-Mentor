@@ -99,6 +99,7 @@ p {
     text-transform: uppercase;
     font-family: "Overpass", sans-serif;
     cursor: pointer;
+    letter-spacing: .2rem;
 }
 
 button:hover {
