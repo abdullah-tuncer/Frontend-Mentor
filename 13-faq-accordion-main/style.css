@@ -1,0 +1,125 @@
+@font-face {
+    font-family: 'WorkSans';
+    src: url('./assets/fonts/WorkSans-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'WorkSans';
+    src: url('./assets/fonts/WorkSans-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+}
+
+:root {
+    font-size: 16px;
+    --purple-100: hsl(275, 100%, 97%);
+    --purple-600: hsl(292, 16%, 49%);
+    --purple-950: hsl(292, 42%, 14%);
+}
+
+body {
+    font-family: 'WorkSans', sans-serif;
+    margin: 0;
+    background: var(--purple-100);
+    overflow-x: hidden;
+    color: var(--purple-600);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.decor {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: -1;
+    object-fit: cover;
+    translate: -50%;
+}
+
+.card {
+    margin: auto;
+    max-width: 500px;
+    background: white;
+    border-radius: .8rem;
+    padding: 2rem;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+h1, h3 {
+    color: var(--purple-950);
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin: 0;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+h3:hover {
+    cursor: pointer;
+    color: #AD28EB;
+}
+
+.questions {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+p {
+    line-height: 1.5;
+}
+
+button {
+    border-radius: 50%;
+    background: transparent;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}
+
+article[data-show="true"] img[data-active="false"],
+article[data-show="false"] :is(img[data-active="true"], .solution),
+hr:last-child {
+    display: none;
+}
+
+hr {
+    width: 100%;
+    border-color: rgba(128, 128, 128, 0.1);
+}
+
+@media screen and (min-width: 1440px) {
+    .decor img{
+       width: 100vw;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    :root{
+        font-size: 14px;
+    }
+}
