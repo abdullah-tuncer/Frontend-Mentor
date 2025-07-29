@@ -5,7 +5,7 @@ function createElement(data) {
                 <h3 class="question-title">
                     ${data.question}
                 </h3>
-                <button type="button">
+                <button type="button" aria-label="Show/Hide Solution">
                     <img data-active="true" src="assets/images/icon-minus.svg" alt="">
                     <img data-active="false" src="assets/images/icon-plus.svg" alt="">
                 </button>
