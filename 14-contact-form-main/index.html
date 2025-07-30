@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Frontend Mentor | Contact form</title>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+<main>
+    <form id="contact-form">
+        <h1>
+            Contact Us
+        </h1>
+        <div class="name-container">
+            <div class="input-container">
+                <label for="firstname">First Name <span class="color-green">*</span></label>
+                <input
+                        id="firstname"
+                        name="firstname"
+                        type="text"
+                        autocomplete="given-name"
+                        aria-describedby="firstname-error"
+                        required
+                >
+            </div>
+            <div class="input-container">
+                <label for="lastname">Last Name <span class="color-green">*</span></label>
+                <input
+                        id="lastname"
+                        name="lastname"
+                        type="text"
+                        autocomplete="family-name"
+                        aria-describedby="lastname-error"
+                        required
+                >
+            </div>
+        </div>
+        <div class="input-container">
+            <label for="email">
+                Email Address <span class="color-green">*</span>
+            </label>
+            <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    aria-describedby="email-error"
+                    required
+            >
+        </div>
+        <div class="input-container">
+            <fieldset id="radio-group">
+                <legend>Query Type <span class="color-green">*</span></legend>
+                <div class="radio-container">
+                    <label class="radio-card">
+                        <input id="radio1" type="radio" name="queryType" aria-describedby="queryType-error">
+                        General Enquiry
+                    </label>
+                    <label class="radio-card">
+                        <input id="radio2" type="radio" name="queryType" aria-describedby="queryType-error">
+                        Support Request
+                    </label>
+                </div>
+            </fieldset>
+        </div>
+        <div class="input-container">
+            <label for="message">Message <span class="color-green">*</span></label>
+            <textarea id="message" name="message" aria-describedby="message-error" required></textarea>
+        </div>
+        <div id="checkbox" class="input-container">
+            <label class="checkbox">
+                <input type="checkbox" name="consent" aria-describedby="consent-error" required>
+                I consent to being contacted by the team <span class="color-green">*</span>
+            </label>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="success-toast">
+        <header>
+            <img src="assets/images/icon-success-check.svg" alt="">
+            <h2>Message Sent!</h2>
+        </header>
+        <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
+</main>
+</body>
+</html>
