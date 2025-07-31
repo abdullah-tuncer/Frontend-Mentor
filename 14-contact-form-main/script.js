@@ -23,11 +23,11 @@ validation
     .addRequiredGroup('#checkbox', 'To submit this form, please consent to being contacted')
     .onSuccess((event) => {
         const toast = document.getElementById("success-toast");
-        console.log(toast)
-        toast.classList.add("active");
+        toast.classList.remove("sr-only");
+        toast.innerText += " "
         event.target.reset();
         setInterval(() => {
-            toast.classList.remove("active");
+            toast.classList.add("sr-only");
         }, 5000)
     });
 
